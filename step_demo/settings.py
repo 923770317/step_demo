@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'step_demo.demo_prac',
+    'step_demo.wiki',
     'django.contrib.staticfiles',
 ]
 

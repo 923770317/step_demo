@@ -19,6 +19,10 @@ import add
 import list_demo
 import csv_test
 import login
+from django.conf.urls import include
+import wiki
+from wiki import urls
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,4 +31,5 @@ urlpatterns = [
     url(r'^login/$', login.login),
     url(r'^logout1/$', login.logout1),
     url(r'^csv/(?P<filename>\w+)/$', csv_test.output),
+    url(r'^wiki/',include(wiki.urls)),
 ]
