@@ -25,6 +25,9 @@ def index(request,pagename =''):
         # pages = Wiki.objects.all()
         return process('page.html',page)
 
+
+
+
 def edit(request,pagename):
     page = Wiki.objects.get(pagename = pagename)
     return render_to_response('edit.html',{'pagename':pagename,'content':page.content})
