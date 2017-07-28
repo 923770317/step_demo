@@ -1,0 +1,18 @@
+<h1>通讯录</h1>
+<hr>
+<table border="1">
+<tr>
+  <th>姓名</th>
+  <th>性别</th>
+  <th>电话</th>
+  <th>邮件</th>
+</tr>
+{% for address in addresses %}
+<tr>
+  <td>{{ address.name }}</td>
+  <td>{{ address.gender }}</td>
+  <td>{{ address.mobile }}</td>
+  <td>{{ address.email }}</td>
+</tr>
+{% endfor %}
+</table>

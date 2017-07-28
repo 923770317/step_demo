@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'step_demo.demo_prac',
     'step_demo.wiki',
+    'step_demo.address',
     'django.contrib.staticfiles',
 ]
 

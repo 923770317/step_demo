@@ -21,7 +21,9 @@ import csv_test
 import login
 from django.conf.urls import include
 import wiki
+import address
 from wiki import urls
+from address import urls
 
 
 urlpatterns = [
@@ -32,4 +34,5 @@ urlpatterns = [
     url(r'^logout1/$', login.logout1),
     url(r'^csv/(?P<filename>\w+)/$', csv_test.output),
     url(r'^wiki/',include(wiki.urls)),
+    url(r'^address/',include(address.urls)),
 ]
