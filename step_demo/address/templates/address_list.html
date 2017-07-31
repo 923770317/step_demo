@@ -1,5 +1,14 @@
 <h1>通讯录</h1>
 <hr>
+<table border="0" width="500">
+<tr align="right">
+  <td>{% if has_previous %}
+    <a href="/address?page={{ previous }}">上一页</a>
+    {% endif %} {% if has_next %}
+    <a href="/address?page={{ next }}">下一页</a>
+    {% endif %}</td></tr>
+</table>
+
 <table border="1">
 <tr>
   <th>姓名</th>
@@ -16,3 +25,8 @@
 </tr>
 {% endfor %}
 </table>
+
+<form enctype="multipart/form-data" method="POST" action="/address/upload/">
+上传通讯录文件： <input type="file" name="file"/><br/>
+<input type="submit" value="上传文件"/>
+</form>
