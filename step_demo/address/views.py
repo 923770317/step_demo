@@ -28,7 +28,7 @@ def list(request):
 
 
 
-    return render_to_response('address_list.html', {'addresses': addresses})
+    # return render_to_response('address_list.html', {'addresses': addresses})
 
 #上传
 def upload(request):

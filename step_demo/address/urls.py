@@ -7,5 +7,4 @@ import views
 address = Address.objects.all()
 
 urlpatterns = [
-    url(r'^/?$',views.list),
-]
+    url(r'^/?$',views.list), url(r'^upload/$', views.upload),]

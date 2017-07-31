@@ -2,10 +2,10 @@
 <hr>
 <table border="0" width="500">
 <tr align="right">
-  <td>{% if has_previous %}
-    <a href="/address?page={{ previous }}">上一页</a>
-    {% endif %} {% if has_next %}
-    <a href="/address?page={{ next }}">下一页</a>
+  <td>{% if addresses.has_previous %}
+    <a href="/address?page={{ addresses.previous_page_number }}">上一页</a>
+    {% endif %} {% if addresses.has_next %}
+    <a href="/address?page={{ addresses.next_page_number }}">下一页</a>
     {% endif %}</td></tr>
 </table>
 
