@@ -3,6 +3,14 @@
 <h1>通讯录</h1>
 <hr>
 <table border="0" width="500">
+    <tr align="right"><td>
+    <form method="GET" action="/address/search/">
+    搜索姓名：<input name="search" type="text" value="{{ searchvalue }}"/>
+    <input type="submit" value="提交"/>
+    </form>
+    </td></tr>
+    </table>
+<table border="0" width="500">
 <tr align="right">
   <td>{% if addresses.has_previous %}
     <a href="/address?page={{ addresses.previous_page_number }}">上一页</a>

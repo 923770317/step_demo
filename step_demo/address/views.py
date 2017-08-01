@@ -6,6 +6,7 @@ from models import Address
 from django.core.paginator import Paginator
 from django.core.paginator import PageNotAnInteger
 from django.core.paginator import EmptyPage
+from django.http import request
 
 # Create your views here.
 
@@ -25,10 +26,23 @@ def list(request):
     return render_to_response("address_list.html",{"addresses":addresses})
 
 
-
-
-
-    # return render_to_response('address_list.html', {'addresses': addresses})
+def search(request):
+    limit = 3
+    # name = request.POST['search']
+    name = request.GET['search']
+    if name:
+        addresses = Address.objects.filter(name__icontains=name)
+        pageinator = Paginator(addresses, limit)
+        page = request.GET.get('page')
+        try:
+            addresses = pageinator.page(page)
+        except PageNotAnInteger:
+            addresses = pageinator.page(1)
+        except EmptyPage:
+            addresses = pageinator.page(pageinator.num_pages)
+        return render_to_response("address_list.html", {"addresses": addresses})
+    else:
+        return HttpResponseRedirect("/list/")
 
 #上传
 def upload(request):
