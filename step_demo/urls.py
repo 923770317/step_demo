@@ -24,6 +24,8 @@ import wiki
 import address
 from wiki import urls
 from address import urls
+import ajax
+from ajax import urls
 from django.conf import settings
 
 
@@ -36,6 +38,7 @@ urlpatterns = [
     url(r'^csv/(?P<filename>\w+)/$', csv_test.output),
     url(r'^wiki/',include(wiki.urls)),
     url(r'^address/',include(address.urls)),
+    url(r'^ajax/',include(ajax.urls)),
     # url(r'^site_media/(?P<path>.*)$', django.views.static.serve,
     #     {'document_root': settings.STATIC_PATH}),
 ]

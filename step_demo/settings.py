@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'step_demo.demo_prac',
     'step_demo.wiki',
     'step_demo.address',
+    'step_demo.ajax',
     'django.contrib.staticfiles',
 ]
 
@@ -47,7 +48,9 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
